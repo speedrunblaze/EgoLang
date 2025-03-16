@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/speedrunblaze/EgoLang/refs/heads/main/1742139452315.png)
+
 # Ego Language Documentation
 
 ## Overview
