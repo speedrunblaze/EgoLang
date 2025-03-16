@@ -1,6 +1,8 @@
 # Ego Programming Language Documentation
+![](https://raw.githubusercontent.com/speedrunblaze/EgoLang/refs/heads/main/imgm.jpg)
 
-The Ego language is a high-level programming language. It is simple and focuses on basic tasks like declaring variables, printing values, and using conditionals for flow control.
+#
+**The Ego language is a high-level programming language. It is simple and focuses on basic tasks like declaring variables, printing values, and using conditionals for flow control.**
 
 #
 
