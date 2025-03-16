@@ -1,203 +1,203 @@
-# Ego Programming Language Documentation
-![](https://raw.githubusercontent.com/speedrunblaze/EgoLang/refs/heads/main/imgm.jpg)
+# Ego Language Documentation
 
-#
-**The Ego language is a high-level programming language. It is simple and focuses on basic tasks like declaring variables, printing values, and using conditionals for flow control.**
+## Overview
 
-#
+Ego is a strongly-typed programming language with explicit visibility and mutability controls. It compiles to Python bytecode and provides a structured approach to programming with clear rules about variable access and modification.
 
-### **Language Structure**
+## Basic Syntax
 
-#### 1. **Variable Declarations**
+### Comments
 
-Variables can be declared using two keywords: `public` and `private`.  
-- `public` variables can be accessed anywhere in the program.  
-- `private` variables can only be accessed in the block where they are declared.  
-
-You can also use `mutable` or `immutable`:  
-- `mutable`: The variable can be changed after it is declared.  
-- `immutable`: The variable cannot be changed after it is declared.  
-
-**Syntax:**  
-```ego
-public mutable <type> <variable_name> = <value>;
-private immutable <type> <variable_name> = <value>;
 ```
-
-**Example:**  
-```ego
-public mutable int a = 10;
-private immutable int b = 5;
-```
-
-#
-
-#### 2. **Data Types**
-
-Ego supports these data types:  
-- `int`: For whole numbers (e.g., 10, -5).  
-- `float`: For decimal numbers (e.g., 3.14, -0.5).  
-- `string`: For text (e.g., "Hello").  
-
-**Example:**  
-```ego
-public mutable int age = 30;
-private immutable string name = "John";
-```
-
-# 
-
-#### 3. **Assignments**
-
-You can assign values to variables using the `=` sign.  
-
-**Syntax:**  
-```ego
-<variable_name> = <value>;
-```
-
-**Example:**  
-```ego
-a = 20;
-```
-
-#
-
-#### 4. **Print Command**
-
-To print values or messages, use the `print()` command.  
-
-**Syntax:**  
-```ego
-print(<variable_or_text>);
-```
-
-**Example:**  
-```ego
-print(a);
-print("Hello, World!");
-```
-
-#
-
-#### 5. **Conditionals (if-else)**
-
-Ego supports `if-else` for decision-making.  
-
-**Syntax:**  
-```ego
-if (<condition>) {
-    <if_block>;
-} else {
-    <else_block>;
-}
-```
-
-- `condition`: A true/false expression.  
-- `if_block`: Code to run if the condition is true.  
-- `else_block`: Code to run if the condition is false.  
-
-**Example:**  
-```ego
-if (a > 10) {
-    print("The variable a is greater than 10");
-} else {
-    print("The variable a is not greater than 10");
-}
-```
-
-#
-
-#### 6. **Operators**
-
-Ego supports these operators:  
-
-**Arithmetic:**  
-- `+`: Addition  
-- `-`: Subtraction  
-- `*`: Multiplication  
-- `/`: Division  
-- `%`: Modulus (remainder of division)  
-
-**Example:**  
-```ego
-public mutable int sum = a + b;
-public mutable float division = a / 2.0;
-```
-
-**Comparison:**  
-- `==`: Equal to  
-- `!=`: Not equal to  
-- `>`: Greater than  
-- `<`: Less than  
-- `>=`: Greater than or equal to  
-- `<=`: Less than or equal to  
-
-**Example:**  
-```ego
-if (a == b) {
-    print("The variables are equal");
-} else {
-    print("The variables are different");
-}
-```
-
-**Logical:**  
-- `&&`: AND  
-- `||`: OR  
-- `!`: NOT  
-
-**Example:**  
-```ego
-if (a > 10 && b < 20) {
-    print("Both conditions are true");
-}
-```
-#
-
-#### 7. **Comments**
-
-Comments are used to explain code and are ignored during execution.  
-
-- Single-line comment: Starts with `//`.  
-- Multi-line comment: Starts with `/*` and ends with `*/`.  
-
-**Example:**  
-```ego
 // This is a single-line comment
-/*
-This is a multi-line comment
-spanning multiple lines
-*/
+
+/* This is a
+   multi-line comment */
 ```
 
----
+### Variables
 
-### **Full Example**
+Variables in Ego must be declared with visibility, mutability, type, and name:
 
-Here is a simple Ego program:  
+```
+visibility mutability type name = value;
+```
 
-```ego
-public mutable int a = 10;
-private immutable int b = 5;
-public mutable int result = a + b;
+For example:
+```
+public mutable int counter = 0;
+private immutable string name = "Ego";
+protected const bool isEnabled = true;
+```
 
-print(result);
+#### Visibility Modifiers
+- `public`: Accessible everywhere
+- `private`: Limited to current scope
+- `protected`: Limited to current scope and child scopes
 
-if (result > 10) {
-    print("The result is greater than 10");
+#### Mutability Modifiers
+- `mutable`: Can be changed after declaration
+- `immutable`: Cannot be changed after declaration
+- `const`: Cannot be changed (similar to immutable)
+
+#### Data Types
+- `int`: Integer values
+- `float`: Floating-point values
+- `string`: Text values
+- `bool`: Boolean values (true/false)
+- `list`: List of values
+- `dict`: Dictionary/map of key-value pairs
+
+### Control Structures
+
+#### If Statements
+
+```
+if (condition) {
+    // code to execute if condition is true
 } else {
-    print("The result is 10 or less");
+    // code to execute if condition is false
 }
 ```
 
-**Explanation:**  
-1. Declare variables `a`, `b`, and `result`.  
-2. Print the value of `result`.  
-3. Check if `result` is greater than 10 and print a message.  
+#### Loops
 
-#
+For loops:
+```
+for (initialization; condition; update) {
+    // code to execute in loop
+}
+```
 
-### **Final Thoughts**
+While loops:
+```
+while (condition) {
+    // code to execute while condition is true
+}
+```
 
-Ego is a simple and powerful language, perfect for beginners or projects that need basic features like variables, conditionals, and math operations. It is easy to learn and use.
+### Functions
+
+Functions are declared with visibility, the `function` keyword, name, parameters, and body:
+
+```
+visibility function name(parameters) {
+    // function body
+}
+```
+
+For example:
+```
+public function calculateArea(int width, int height) {
+    public mutable int area = width * height;
+    return area;
+}
+```
+
+### Printing Values
+
+```
+print(value);
+```
+
+## Examples
+
+### Basic Variable Usage
+
+```
+public mutable int x = 10;
+public immutable string greeting = "Hello";
+print(x);
+print(greeting);
+```
+
+### Using Conditions
+
+```
+public mutable int age = 18;
+
+if (age >= 18) {
+    print("Adult");
+} else {
+    print("Minor");
+}
+```
+
+### Loop Example
+
+```
+public mutable int i = 0;
+while (i < 5) {
+    print(i);
+    i = i + 1;
+}
+```
+
+```
+for (public mutable int j = 0; j < 5; j = j + 1) {
+    print(j);
+}
+```
+
+### Function Example
+
+```
+public function add(int a, int b) {
+    return a + b;
+}
+
+public mutable int result = add(5, 3);
+print(result);
+```
+
+## Error Handling
+
+The Ego compiler will generate errors for:
+
+1. Attempting to modify an immutable variable
+2. Using undefined variables
+3. Invalid visibility or mutability modifiers
+4. Invalid data types
+5. Syntax errors in control structures or function declarations
+
+Error messages will be included as comments in the generated Python code.
+
+## Compilation Process
+
+The EgoJITCompiler processes Ego code in these steps:
+
+1. Clean the source code (remove comments, normalize whitespace)
+2. Split code into logical blocks
+3. Translate each block into equivalent Python code
+4. Track variables and their properties in scopes
+5. Compile the generated Python code to bytecode
+
+## Language Limitations
+
+- No support for classes or object-oriented programming
+- Limited data type operations
+- No built-in exception handling
+- No modules or imports
+- Limited standard library
+
+## Using the Compiler
+
+```python
+from ego_compiler import EgoJITCompiler
+
+compiler = EgoJITCompiler()
+ego_code = """
+public mutable int x = 10;
+if (x > 5) {
+    print("Greater than 5");
+} else {
+    print("Less than or equal to 5");
+}
+"""
+
+compiler.compile(ego_code, 'output.pyc')
+```
+
+## Runtime Environment
+
+The compiled Ego programs run in Python's runtime environment, but maintain Ego's variable access and mutability rules through the generated code.
