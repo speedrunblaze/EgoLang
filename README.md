@@ -184,20 +184,30 @@ The EgoJITCompiler processes Ego code in these steps:
 
 ## Using the Compiler
 
-```python
-from ego_compiler import EgoJITCompiler
+1. Go to the `src/Ego_compiler` file and scroll to the end of the code.
 
-compiler = EgoJITCompiler()
-ego_code = """
+
+2. Inside the ``sample_code`` instance, write your code.
+
+Example:
+```
+sample_code = """
+
 public mutable int x = 10;
-if (x > 5) {
-    print("Greater than 5");
-} else {
-    print("Less than or equal to 5");
-}
-"""
+print(x);
 
-compiler.compile(ego_code, 'output.pyc')
+"""
+```
+
+3. In the function:
+
+```compiler.compile(sample_code, 'output.ego')```
+
+Set the output file name by replacing ``'output.ego'`` with the name you want for the compiled file.
+
+Example:
+```
+compiler.compile(sample_code, 'my_file.ego')
 ```
 
 ## Runtime Environment
