@@ -219,5 +219,4 @@ The compiled Ego programs run in Python's runtime environment, but maintain Ego'
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) 
 ![Python](https://img.shields.io/badge/Python-14354C?style=flat-square&logo=python&logoColor=white) 
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white) 
-![Deepseek AI](https://img.shields.io/badge/Deepseek_AI-0F4C81?style=flat-square&logo=deepseek&logoColor=white) 
 ![Claude AI](https://img.shields.io/badge/Claude_AI-3E5E8A?style=flat-square&logo=anthropic&logoColor=white)
