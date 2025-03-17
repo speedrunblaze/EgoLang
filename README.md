@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/speedrunblaze/EgoLang/refs/heads/main/1742139452315.png)
+![Logoprimary](https://raw.githubusercontent.com/speedrunblaze/EgoLang/refs/heads/main/kGpqoIkiaGfP1qz4-generated_image.jpg)
 
 # Ego Language Documentation
 
